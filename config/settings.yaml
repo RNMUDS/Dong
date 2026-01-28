@@ -1,0 +1,37 @@
+# カメラ設定
+camera:
+  index: 0  # カメラデバイス番号
+  width: 1280
+  height: 720
+
+# キャリブレーション設定
+calibration:
+  chessboard_size: [9, 6]  # チェスボードの内側コーナー数 (columns, rows)
+  square_size: 25.0  # 各マスの実際のサイズ (mm)
+  calibration_file: "config/camera_calibration.yaml"
+
+# 物体の既知サイズ (mm)
+# 検出したい物体の実際のサイズを設定
+objects:
+  # 例: ペットボトル（高さ約200mm）
+  bottle:
+    height: 200.0
+    width: 65.0
+  # 例: スマートフォン
+  cell phone:
+    height: 150.0
+    width: 70.0
+  # 例: マグカップ
+  cup:
+    height: 95.0
+    width: 80.0
+  # デフォルト（未知の物体用）
+  default:
+    height: 100.0
+    width: 100.0
+
+# YOLO設定
+yolo:
+  model: "yolov8n.pt"  # n=nano, s=small, m=medium, l=large, x=extra large
+  confidence: 0.5
+  device: "cpu"  # "cpu" or "cuda" or "mps"
